@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Lemon</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #ECEBE8; font-family: Georgia, 'Times New Roman', serif; color: #222222; padding: 25px 0; }
+        .wrapper { width: 90%; max-width: 1050px; margin: 0 auto; }
+        .brand-header { display: flex; justify-content: center; align-items: center; gap: 25px; margin-bottom: 25px; }
+        .brand-logo { width: 85px; height: 85px; background-color: #7A2E1D; border-radius: 50% 0 50% 50%; display: flex; justify-content: center; align-items: center; color: #F3E3D8; font-size: 2.2rem; font-weight: bold; box-shadow: 0 3px 6px rgba(0,0,0,0.15); }
+        .brand-header h1 { font-family: 'Trebuchet MS', sans-serif; font-size: 2.4rem; letter-spacing: 8px; color: #5C2215; text-transform: uppercase; }
+        nav { background-color: #4A1C12; border-radius: 14px; padding: 14px 30px; display: flex; justify-content: space-around; align-items: center; margin-bottom: 25px; }
+        nav a { color: #FFFFFF; text-decoration: none; font-family: 'Courier New', Courier, monospace; font-size: 1.25rem; font-weight: bold; padding: 4px 12px; border-radius: 6px; }
+        nav a:hover, nav a.active { background-color: #9E3B24; }
+        .banner { background-image: linear-gradient(rgba(35, 12, 6, 0.55), rgba(35, 12, 6, 0.65)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center; border-radius: 16px; padding: 35px 30px; color: #FFFFFF; margin-bottom: 25px; }
+        .banner h2 { font-family: 'Trebuchet MS', sans-serif; font-size: 2.2rem; margin-bottom: 18px; }
+        .banner p { font-size: 0.98rem; line-height: 1.55; max-width: 850px; }
+        .three-col-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 30px; }
+        .feature-card { background-color: #F3E3D8; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; }
+        .feature-card h3 { font-family: 'Trebuchet MS', sans-serif; font-size: 1.45rem; color: #2B120C; margin-bottom: 18px; }
+        .feature-card img { width: 100%; height: 165px; object-fit: cover; margin-bottom: 18px; }
+        .feature-card p { font-size: 0.92rem; line-height: 1.5; color: #2C221E; margin-bottom: 16px; }
+        .feature-card a { color: #7A2E1D; font-size: 0.92rem; text-decoration: underline; margin-top: auto; }
+        .hours-list { list-style: none; padding-left: 25px; font-size: 0.92rem; line-height: 1.6; color: #2C221E; }
+        .footer-top { display: flex; align-items: center; margin-bottom: 25px; }
+        .mini-logo-box { width: 65px; height: 75px; border: 2px solid #7A2E1D; display: flex; justify-content: center; align-items: center; background-color: #FFFFFF; margin-left: 15px; }
+        .mini-logo-inner { width: 34px; height: 34px; background-color: #7A2E1D; border-radius: 50% 0 50% 50%; color: #FFFFFF; font-weight: bold; display: flex; justify-content: center; align-items: center; font-size: 1rem; }
+        .footer-credit { text-align: center; font-size: 0.95rem; color: #5C2215; padding-top: 10px; }
+        .footer-credit span { color: #B03A2E; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="brand-header">
+            <div class="brand-logo">L</div>
+            <h1>LITTLE LEMON</h1>
+        </header>
+
+        <nav>
+            <a href="{% url 'home' %}" class="active">Home</a>
+            <a href="{% url 'menu' %}">Menu</a>
+            <a href="{% url 'administration' %}">Administration</a>
+            <a href="{% url 'contact' %}">Contact Us</a>
+        </nav>
+
+        <section class="banner">
+            <h2>30% Off This Weekend</h2>
+            <p>Join us this weekend at The Spice Route to enjoy 30% off on all signature platters, wood-fired tandoori starters, and royal biryanis. Every dish is freshly prepared using hand-ground spices and locally sourced farm ingredients for an unforgettable dining experience.</p>
+        </section>
+
+        <section class="three-col-grid">
+            <article class="feature-card">
+                <h3>Our New Menu</h3>
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Grilled Skewers">
+                <p>Discover our newly curated seasonal menu featuring smoky clay-oven kebabs, slow-simmered curries, freshly baked garlic naans, and traditional saffron desserts crafted by our master chefs.</p>
+                <a href="{% url 'menu' %}">See our new menu</a>
+            </article>
+
+            <article class="feature-card">
+                <h3>Book a table</h3>
+                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80" alt="Fresh Platter">
+                <p>Planning a family dinner, corporate lunch, or weekend celebration? Reserve your table in advance to enjoy priority seating, personalized hospitality, and a warm ambiance without any waiting time.</p>
+                <a href="{% url 'contact' %}">Book your table now</a>
+            </article>
+
+            <article class="feature-card">
+                <h3>Opening Hours</h3>
+                <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80" alt="Chef Preparing Dish">
+                <p>We welcome guests throughout the week for dine-in, takeaway, and private group reservations during the following hours:</p>
+                <ul class="hours-list">
+                    <li>Mon - Fri: 2pm - 10pm</li>
+                    <li>Sat: 2pm - 11pm</li>
+                    <li>Sun: 2pm - 9pm</li>
+                </ul>
+            </article>
+        </section>
+
+        <footer>
+            <div class="footer-top">
+                <div class="mini-logo-box"><div class="mini-logo-inner">L</div></div>
+            </div>
+            <p class="footer-credit">Designed and Developed by <span>[DIWAN SANJAY P M]</span></p>
+        </footer>
+    </div>
+</body>
+</html>
